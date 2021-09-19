@@ -7,12 +7,22 @@ import os
 
 
 def prepare_data(df):
+  """
+  :param df: pandas dataframe
+  :return: tuple of independent and target variables
+  """
   X = df.drop("y", axis=1)
   y = df["y"]
   return X, y
 
 
 def save_model(model, filename):
+  """
+
+  :param model: python object
+  :param filename: Name of the model
+  :return:
+  """
   model_dir = "models"
   os.makedirs(model_dir, exist_ok=True) # ONLY CREATE IF MODEL_DIR DOESN"T EXISTS
   filePath = os.path.join(model_dir, filename) # model/filename
